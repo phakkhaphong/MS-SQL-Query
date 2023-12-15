@@ -43,3 +43,21 @@ GROUP BY
 		,	(X.OrderYear,X.Country,X.categoryname)
 		)
 ORDER BY 1,2,3
+
+GO
+
+SELECT
+	X.OrderYear,X.Country,X.categoryname
+,	SUM(Amount) as Amount
+FROM Sales.AmountX as X
+GROUP BY CUBE (X.OrderYear,X.Country)
+ORDER BY 1,2
+GO
+
+SELECT
+	X.OrderYear,X.Country,X.categoryname
+,	SUM(Amount) as Amount
+FROM Sales.AmountX as X
+GROUP BY ROLLUP (X.OrderYear,X.Country,X.categoryname)
+ORDER BY 1,2,3
+GO
