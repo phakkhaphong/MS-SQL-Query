@@ -3887,7 +3887,4 @@ ALTER TABLE [Sales].[OrderDetails]  WITH NOCHECK ADD  CONSTRAINT [CK_UnitPrice] 
 GO
 ALTER TABLE [Sales].[OrderDetails] CHECK CONSTRAINT [CK_UnitPrice]
 GO
-USE [master]
-GO
-ALTER DATABASE [Northwind] SET  READ_WRITE 
-GO
+
