@@ -4,7 +4,7 @@ SELECT
 FROM Sales.Customers as C
 OUTER APPLY
 	(
-	SELECT TOP 2 --Bucket Size
-	* 
+	SELECT TOP 2 * 
 	FROM Sales.Orders as O WHERE O.custid=C.custid
+	ORDER BY O.orderid DESC
 	)as X
