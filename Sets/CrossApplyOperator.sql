@@ -5,7 +5,8 @@ SELECT
 FROM Production.Categories as C
 CROSS APPLY
 	(
-	SELECT TOP 1 *
+	SELECT TOP 1 --Bucket Size
+	*
 	FROM Production.Products as P	WHERE P.categoryid=C.categoryid
 	ORDER BY P.unitprice DESC
 	) as X
