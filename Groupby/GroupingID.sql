@@ -1,7 +1,6 @@
-SELECT
-	OrderYear,Category
+SELECT 
+	Country,OrderYear,Category
+--,	GROUPING_ID(Country) as GID1 ,GROUPING_ID(OrderYear) as GID2 ,GROUPING_ID(Category) as GID3
+--,	GROUPING_ID(Country,OrderYear,Category) as GID4
 ,	SUM(Amount) as Amount
---,	GROUPING_ID(OrderYear) as GID1,GROUPING_ID(Category) as GID2,GROUPING_ID(OrderYear,Category) as GID3
-FROM Sales.vwAmountX
-GROUP BY ROLLUP (OrderYear,Category)
-ORDER BY OrderYear,Category
+FROM Sales.vwTestAmount
