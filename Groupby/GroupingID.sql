@@ -4,3 +4,4 @@ SELECT
 --,	GROUPING_ID(Country,OrderYear,Category) as GID4
 ,	SUM(Amount) as Amount
 FROM Sales.vwTestAmount
+GROUP BY ROLLUP (Country,OrderYear,Category)
